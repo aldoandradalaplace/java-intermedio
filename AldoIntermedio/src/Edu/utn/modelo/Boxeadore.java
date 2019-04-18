@@ -1,14 +1,11 @@
 package Edu.utn.modelo;
 
-public class Boxeadore {
+public class Boxeadore extends Persona {
 
 	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
 	public Categorias getCategoria() {
 		return categoria;
@@ -23,15 +20,26 @@ public class Boxeadore {
 	private Categorias categoria;
 	
 	public Boxeadore (String x){
-		this.nombre = x;
+		this.setNombre(x);
 		}
+	
+	
+	
 	@Override
 	public String toString() {
 		String laCategoria = (categoria==null?"Sin Categoria": categoria.toString());
-		return nombre + "-" + laCategoria;
+		return this.getNombre() + "-" + laCategoria;
 	}
 
+	@Override
+	public void presentarse () {
+		String presentacion = "%s : %s : %s";
+		String.format(presentacion, getIdentificacion(),getCategoria(),getNombre());
+		System.out.println(String.format(presentacion, getIdentificacion(),getCategoria(),getNombre()));
+	}
+
+}
 	
 
 
-}
+

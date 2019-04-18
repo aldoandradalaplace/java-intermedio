@@ -13,14 +13,14 @@ public class IncripcionGym {
 		box2.setCategoria(Categorias.pesado);
 		Boxeadore box3 = new Boxeadore ("Pepo");	
 		Entrenador ent= new Entrenador("Juan", Categorias.welter, Categorias.pesado, 2);
+		box3.presentarse();
 		
-		System.out.println(box3);
 		
 		System.out.println(ent.asignarBoxeador(box));
 		System.out.println(ent.asignarBoxeador(box2));
 		System.out.println(ent.asignarBoxeador(box3));
 		
-		
+		ent.presentarse();
 		System.out.println("Mostrar Boxeadores");
 		ent.imprimirBoxeadores();
 	}
