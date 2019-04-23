@@ -1,8 +1,8 @@
 package Edu.utn.modelo;
 import java.util.ArrayList;
 import java.util.Collection;
-
-public class Entrenador extends Persona {
+import java.util.Random;
+public class Entrenador extends Persona implements Identificable{
 
 	int CantidadMaxBox;
 	
@@ -22,8 +22,10 @@ public class Entrenador extends Persona {
 		}
 	
 	public void entrenar() {
-		
-		
+	Random random= new Random();
+		for (Boxeadore boxeadore : boxeadores) {
+			boxeadore.entrenarse(random.nextInt(30), random.nextBoolean());
+		}
 	}
 	
 	public boolean asignarBoxeador(Boxeadore b) {
@@ -51,7 +53,10 @@ public class Entrenador extends Persona {
 			System.out.println(presentacion.toString());
 		}
 			
-	
+		@Override
+		public String identificacion() {
+			return "entrenador:"  + this.getIdentificacion();
+		}
 			
 		
 	}
